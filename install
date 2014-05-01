@@ -3,5 +3,3 @@ set -e
 set -x 
 mkdir -p ~/.vagrant.d 
 ln -sf ~/vagrantfiles/Vagrantfile ~/.vagrant.d/Vagrantfile
-ln -sf ~/vagrantfiles/provision ~/.vagrant.d/provision
-ln -sf ~/vagrantfiles/user-provision ~/.vagrant.d/user-provision

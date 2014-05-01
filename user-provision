@@ -1,6 +1,8 @@
 #! /bin/bash
 set -e
 set -x 
-
+rm -rf ~/dotfiles
+# Ignore host key checks for github
+echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 git clone git@github.com:giokincade/dotfiles.git dotfiles
 ./dotfiles/install
