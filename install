@@ -1,5 +1,6 @@
 #! /bin/bash
 set -e
 set -x 
+ssh-add
 mkdir -p ~/.vagrant.d 
 ln -sf ~/vagrantfiles/Vagrantfile ~/.vagrant.d/Vagrantfile
