@@ -4,7 +4,12 @@ set -x
 sudo apt-get update
 sudo apt-get install --yes git 
 sudo apt-get install --yes curl 
-sudo apt-get install --yes ack 
 sudo apt-get install --yes zsh 
 sudo apt-get install --yes vim
-chsh -s /bin/zsh vagrant 
+
+if grep ubuntu /etc/passwd
+then
+    chsh -s /bin/zsh ubuntu
+else
+    chsh -s /bin/zsh vagrant
+fi;
