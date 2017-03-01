@@ -30,7 +30,10 @@ fi
 
 if grep ubuntu /etc/passwd
 then
-    chsh -s /bin/zsh ubuntu
+    sudo chsh -s /bin/zsh ubuntu
+elif grep ec2-user /etc/passwd
+then
+    sudo chsh -s /bin/zsh ec2-user
 else
-    chsh -s /bin/zsh vagrant
+    sudo chsh -s /bin/zsh vagrant
 fi;
