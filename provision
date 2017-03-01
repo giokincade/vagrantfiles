@@ -1,11 +1,32 @@
 #! /bin/bash
 set -e
 set -x 
-sudo apt-get update
-sudo apt-get install --yes git 
-sudo apt-get install --yes curl 
-sudo apt-get install --yes zsh 
-sudo apt-get install --yes vim
+
+function install_ubuntu {
+    sudo apt-get update
+    sudo apt-get install --yes git
+    sudo apt-get install --yes curl
+    sudo apt-get install --yes zsh
+    sudo apt-get install --yes vim 
+}
+
+function install_aws {
+    sudo yum install -y git
+    sudo yum install -y curl
+    sudo yum install -y zsh
+    sudo yum install -y vim 
+}
+
+
+
+if which apt-get
+then
+    install_ubuntu
+elif which yum
+then
+    install_aws
+fi 
+
 
 if grep ubuntu /etc/passwd
 then
